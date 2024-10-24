@@ -1,5 +1,5 @@
 # Cryptography---19CS412-classical-techqniques
-### Date:
+### Date: 17.08.2024
 # Ex-1: Caeser Cipher
 Caeser Cipher using with different key values
 
@@ -90,7 +90,7 @@ return 0;
 The program is executed successfully
 
 ---------------------------------
-### Date:
+### Date: 22.08.2024
 # Ex-2: PlayFair Cipher
 Playfair Cipher using with different key values
 
@@ -186,7 +186,7 @@ The program is executed successfully
 
 
 ---------------------------
-### Date:
+### Date: 24.08.2024
 # Ex-3: Hill Cipher
 Hill Cipher using with different key values
 
@@ -323,7 +323,7 @@ int main() {
 The program is executed successfully
 
 -------------------------------------------------
-### Date:
+### Date: 29.08.2024
 # Ex-4: Vigenere Cipher
 Vigenere Cipher using with different key values
 
@@ -544,7 +544,7 @@ int main() {
 The program is executed successfully
 
 -----------------------------------------------------------------------
-### Date:
+### Date: 05.09.2024
 # Ex-5: Rail Fence Cipher
 Rail Fence Cipher using with different key values
 
