@@ -356,9 +356,7 @@ The Vigenere cipher is a method of encrypting alphabetic text by using a series 
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-
 #define SIZE 30
-
 void toLowerCase(char plain[], int ps) {
     for (int i = 0; i < ps; i++) {
         if (plain[i] >= 'A' && plain[i] <= 'Z') {
@@ -366,8 +364,6 @@ void toLowerCase(char plain[], int ps) {
         }
     }
 }
-
-
 int removeSpaces(char *plain, int ps) {
     int count = 0;
     for (int i = 0; i < ps; i++) {
@@ -378,19 +374,15 @@ int removeSpaces(char *plain, int ps) {
     plain[count] = '\0';
     return count;
 }
-
-
 void generateKeyTable(char key[], int ks, char keyT[5][5]) {
     int i, j, k;
     int *dicty = (int *)calloc(26, sizeof(int)); // A 26 character hashmap to store count of the alphabet
-
     for (i = 0; i < ks; i++) {
         if (key[i] != 'j') {
             dicty[key[i] - 97] = 2;
         }
     }
     dicty['j' - 97] = 1;
-
     i = 0;
     j = 0;
     for (k = 0; k < ks; k++) {
@@ -404,7 +396,6 @@ void generateKeyTable(char key[], int ks, char keyT[5][5]) {
             }
         }
     }
-
     for (k = 0; k < 26; k++) {
         if (dicty[k] == 0) {
             keyT[i][j] = (char)(k + 97);
@@ -417,8 +408,6 @@ void generateKeyTable(char key[], int ks, char keyT[5][5]) {
     }
     free(dicty);
 }
-
-
 void search(char keyT[5][5], char a, char b, int arr[]) {
     if (a == 'j') a = 'i';
     if (b == 'j') b = 'i';
@@ -435,12 +424,9 @@ void search(char keyT[5][5], char a, char b, int arr[]) {
         }
     }
 }
-
-
 int mod5(int a) {
     return (a % 5);
 }
-
 
 int prepare(char str[], int *ptrs) {
     
@@ -450,8 +436,6 @@ int prepare(char str[], int *ptrs) {
     str[*ptrs] = '\0';
     return *ptrs;
 }
-
-
 void encrypt(char str[], char keyT[5][5], int ps) {
     int a[4];
 
@@ -473,8 +457,6 @@ void encrypt(char str[], char keyT[5][5], int ps) {
         }
     }
 }
-
-
 void decrypt(char str[], char keyT[5][5], int ps) {
     int a[4];
 
@@ -501,8 +483,6 @@ void decrypt(char str[], char keyT[5][5], int ps) {
         str[ps - 1] = '\0';
     }
 }
-
-
 void encryptByPlayfairCipher(char str[], char key[]) {
     char keyT[5][5];
     int ks, ps;
@@ -519,8 +499,6 @@ void encryptByPlayfairCipher(char str[], char key[]) {
     generateKeyTable(key, ks, keyT);
     encrypt(str, keyT, ps);
 }
-
-
 void decryptByPlayfairCipher(char str[], char key[]) {
     char keyT[5][5];
     int ks, ps;
@@ -536,8 +514,6 @@ void decryptByPlayfairCipher(char str[], char key[]) {
     generateKeyTable(key, ks, keyT);
     decrypt(str, keyT, ps);
 }
-
-
 int main() {
     char str[SIZE], key[SIZE];
 
